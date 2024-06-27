@@ -1,55 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title>Hello World</title>
-    <url>/2024/06/26/hello-world/</url>
-    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>我的第一篇文章</title>
-    <url>/2024/06/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
-    <content><![CDATA[<p>这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！</p>
-]]></content>
+<search> 
+  
+  
+    
+    <entry>
+      <title>InterProScan</title>
+      <link href="/2024/06/27/InterProScan/"/>
+      <url>/2024/06/27/InterProScan/</url>
+      
+        <content type="html"><![CDATA[<h1 id="InterProScan"><a href="#InterProScan" class="headerlink" title="InterProScan"></a>InterProScan</h1><h2 id="conda安装"><a href="#conda安装" class="headerlink" title="conda安装"></a>conda安装</h2><p>（蓝色的是要运行的命令行）<br>需提前配置perl5, python3, java11 </p><h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install -c bioconda interproscan</span><br><span class="line"><span class="comment">#https://anaconda.org/bioconda/interproscan</span></span><br></pre></td></tr></table></figure><h3 id="下载、检查md5文件并解压数据库"><a href="#下载、检查md5文件并解压数据库" class="headerlink" title="下载、检查md5文件并解压数据库"></a>下载、检查md5文件并解压数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># get the md5 of the databases</span></span><br><span class="line">wget https://ftp.ebi.ac.uk/pub/databases/interpro/iprscan/5/5.62-94.0/interproscan-5.62-94.0-64-bit.tar.gz.md5</span><br><span class="line"><span class="comment"># get the databases (with core because much faster to download)</span></span><br><span class="line">wget https://ftp.ebi.ac.uk/pub/databases/interpro/iprscan/5/5.62-94.0/interproscan-5.62-94.0-64-bit.tar.gz</span><br><span class="line"><span class="comment"># checksum</span></span><br><span class="line"><span class="built_in">md5sum</span> -c interproscan-5.62-94.0-64-bit.tar.gz.md5</span><br><span class="line"><span class="comment"># untar gz</span></span><br><span class="line">tar xvzf interproscan-5.62-94.0-64-bit.tar.gz</span><br></pre></td></tr></table></figure><h3 id="更改数据库"><a href="#更改数据库" class="headerlink" title="更改数据库"></a>更改数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># remove old DB 根据conda安装路径的数据库删除</span></span><br><span class="line"><span class="built_in">rm</span> -rf /home/yangzy/miniconda3/share/InterProScan/data/</span><br><span class="line"><span class="comment"># copy past the new db 把</span></span><br><span class="line">cp-r /home/yangzy/miniconda3/envs/interproscan/interproscan-5.62-94.0/data /home/yangzy/miniconda3/share/InterProScan/</span><br></pre></td></tr></table></figure><p>将wget到的数据库复制过去</p><h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./interproscan.sh -i test_proteins.fasta -f tsv</span><br></pre></td></tr></table></figure><p>如果没有报错，则表示InterProScan能正常运行了</p><p>一般常用的参数有这些：<br>-appl,–applications 用于指定使用Interpro中哪些数据库，默认全部数据库<br>-b,–output-file-base 用于指定输出文件的路径or文件夹，默认是输入文件的路径<br>-f,–formats 用于指定输出文件的后缀，蛋白序列默认输出TSV, XML and GFF3<br>-i,–input 输入文件，一般要为fasta格式，不要带有其他特殊符号</p><h2 id="TBtools"><a href="#TBtools" class="headerlink" title="TBtools"></a>TBtools</h2><p>使用TBtools中的Batch Protein Annotation in InterPro插件<br>参考：<a href="https://mp.weixin.qq.com/s/4tIlpUekwHRlPe4yySFnFA">https://mp.weixin.qq.com/s/4tIlpUekwHRlPe4yySFnFA</a></p><p>上传1w条序列文件后，在分析到两千多条时显示超时错误：</p><p>咨询插件创作者得到反馈：<br>不建议一次1w 太多了 对interprot网站造成一定负担 可以少量多次 比如1000条分10次 另外一次量过多也容易产生ip被封的风险</p>]]></content>
+      
+      
       <categories>
-        <category>默认分类</category>
+          
+          <category> Bio-software </category>
+          
       </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>Maverick</tag>
-        <tag>GitHub</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>InterProScan</title>
-    <url>/2024/06/27/InterProScan/</url>
-    <content><![CDATA[<h1 id="InterProScan"><a href="#InterProScan" class="headerlink" title="InterProScan"></a>InterProScan</h1><h2 id="conda安装"><a href="#conda安装" class="headerlink" title="conda安装"></a>conda安装</h2><p>（蓝色的是要运行的命令行）<br>需提前配置perl5, python3, java11 </p>
-<h3 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">conda install -c bioconda interproscan</span><br><span class="line"><span class="comment">#https://anaconda.org/bioconda/interproscan</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="下载、检查md5文件并解压数据库"><a href="#下载、检查md5文件并解压数据库" class="headerlink" title="下载、检查md5文件并解压数据库"></a>下载、检查md5文件并解压数据库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># get the md5 of the databases</span></span><br><span class="line">wget https://ftp.ebi.ac.uk/pub/databases/interpro/iprscan/5/5.62-94.0/interproscan-5.62-94.0-64-bit.tar.gz.md5</span><br><span class="line"><span class="comment"># get the databases (with core because much faster to download)</span></span><br><span class="line">wget https://ftp.ebi.ac.uk/pub/databases/interpro/iprscan/5/5.62-94.0/interproscan-5.62-94.0-64-bit.tar.gz</span><br><span class="line"><span class="comment"># checksum</span></span><br><span class="line"><span class="built_in">md5sum</span> -c interproscan-5.62-94.0-64-bit.tar.gz.md5</span><br><span class="line"><span class="comment"># untar gz</span></span><br><span class="line">tar xvzf interproscan-5.62-94.0-64-bit.tar.gz</span><br></pre></td></tr></table></figure>
-<h3 id="更改数据库"><a href="#更改数据库" class="headerlink" title="更改数据库"></a>更改数据库</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># remove old DB 根据conda安装路径的数据库删除</span></span><br><span class="line"><span class="built_in">rm</span> -rf /home/yangzy/miniconda3/share/InterProScan/data/</span><br><span class="line"><span class="comment"># copy past the new db 把</span></span><br><span class="line">cp-r /home/yangzy/miniconda3/envs/interproscan/interproscan-5.62-94.0/data /home/yangzy/miniconda3/share/InterProScan/</span><br></pre></td></tr></table></figure>
-<p>将wget到的数据库复制过去</p>
-<h3 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">./interproscan.sh -i test_proteins.fasta -f tsv</span><br></pre></td></tr></table></figure>
-<p>如果没有报错，则表示InterProScan能正常运行了</p>
-<p>一般常用的参数有这些：<br>-appl,–applications 用于指定使用Interpro中哪些数据库，默认全部数据库<br>-b,–output-file-base 用于指定输出文件的路径or文件夹，默认是输入文件的路径<br>-f,–formats 用于指定输出文件的后缀，蛋白序列默认输出TSV, XML and GFF3<br>-i,–input 输入文件，一般要为fasta格式，不要带有其他特殊符号</p>
-<h2 id="TBtools"><a href="#TBtools" class="headerlink" title="TBtools"></a>TBtools</h2><p>使用TBtools中的Batch Protein Annotation in InterPro插件<br>参考：<a href="https://mp.weixin.qq.com/s/4tIlpUekwHRlPe4yySFnFA">https://mp.weixin.qq.com/s/4tIlpUekwHRlPe4yySFnFA</a></p>
-<p>上传1w条序列文件后，在分析到两千多条时显示超时错误：</p>
-<p>咨询插件创作者得到反馈：<br>不建议一次1w 太多了 对interprot网站造成一定负担 可以少量多次 比如1000条分10次 另外一次量过多也容易产生ip被封的风险</p>
-]]></content>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>我的第一篇文章</title>
+      <link href="/2024/06/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/"/>
+      <url>/2024/06/27/%E6%88%91%E7%9A%84%E7%AC%AC%E4%B8%80%E7%AF%87%E6%96%87%E7%AB%A0/</url>
+      
+        <content type="html"><![CDATA[<p>这是我的第一篇文章。文章使用 GitHub 管理，并通过 GitHub Actions 自动构建与发布！</p>]]></content>
+      
+      
       <categories>
-        <category>Bio-software</category>
+          
+          <category> 默认分类 </category>
+          
       </categories>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> 博客 </tag>
+            
+            <tag> Maverick </tag>
+            
+            <tag> GitHub </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2024/06/26/hello-world/"/>
+      <url>/2024/06/26/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
 </search>
