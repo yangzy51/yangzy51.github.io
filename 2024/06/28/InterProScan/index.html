@@ -20,17 +20,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="&#39;chenge-first-blog&#39;">
-<meta property="og:url" content="http://example.com/2024/06/26/chenge-first-blog/index.html">
+  <meta name="description" content="conda安装安装：12conda install -c bioconda interproscan#https:&#x2F;&#x2F;anaconda.org&#x2F;bioconda&#x2F;interproscan 下载、检查md5文件并解压数据库12345678# get the md5 of the databaseswget https:&#x2F;&#x2F;ftp.ebi.ac.uk&#x2F;pub&#x2F;databases&#x2F;interpro&#x2F;ip">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InterProScan">
+<meta property="og:url" content="http://example.com/2024/06/28/InterProScan/index.html">
 <meta property="og:site_name" content="Bio_Learning">
+<meta property="og:description" content="conda安装安装：12conda install -c bioconda interproscan#https:&#x2F;&#x2F;anaconda.org&#x2F;bioconda&#x2F;interproscan 下载、检查md5文件并解压数据库12345678# get the md5 of the databaseswget https:&#x2F;&#x2F;ftp.ebi.ac.uk&#x2F;pub&#x2F;databases&#x2F;interpro&#x2F;ip">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-06-26T01:38:53.000Z">
-<meta property="article:modified_time" content="2024-06-26T01:38:53.876Z">
+<meta property="article:published_time" content="2024-06-28T03:16:58.746Z">
+<meta property="article:modified_time" content="2024-06-28T03:19:43.094Z">
 <meta property="article:author" content="yangzy">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2024/06/26/chenge-first-blog/">
+<link rel="canonical" href="http://example.com/2024/06/28/InterProScan/">
 
 
 <script id="page-configurations">
@@ -43,7 +45,7 @@
   };
 </script>
 
-  <title>'chenge-first-blog' | Bio_Learning</title>
+  <title>InterProScan | Bio_Learning</title>
   
 
 
@@ -159,7 +161,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/26/chenge-first-blog/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/28/InterProScan/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.gif">
@@ -172,7 +174,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          'chenge-first-blog'
+          InterProScan
         </h1>
 
         <div class="post-meta">
@@ -181,8 +183,9 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-06-26 09:38:53" itemprop="dateCreated datePublished" datetime="2024-06-26T09:38:53+08:00">2024-06-26</time>
+              <time title="创建时间：2024-06-28 11:16:58 / 修改时间：11:19:43" itemprop="dateCreated datePublished" datetime="2024-06-28T11:16:58+08:00">2024-06-28</time>
             </span>
 
           
@@ -196,7 +199,16 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <h1 id="conda安装"><a href="#conda安装" class="headerlink" title="conda安装"></a>conda安装</h1><h2 id="安装："><a href="#安装：" class="headerlink" title="安装："></a>安装：</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda install -c bioconda interproscan</span><br><span class="line"><span class="comment">#https://anaconda.org/bioconda/interproscan</span></span><br></pre></td></tr></table></figure>
+<h2 id="下载、检查md5文件并解压数据库"><a href="#下载、检查md5文件并解压数据库" class="headerlink" title="下载、检查md5文件并解压数据库"></a>下载、检查md5文件并解压数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># get the md5 of the databases</span></span><br><span class="line">wget https://ftp.ebi.ac.uk/pub/databases/interpro/iprscan/5/5.62-94.0/interproscan-5.62-94.0-64-bit.tar.gz.md5</span><br><span class="line"><span class="comment"># get the databases (with core because much faster to download)</span></span><br><span class="line">wget https://ftp.ebi.ac.uk/pub/databases/interpro/iprscan/5/5.62-94.0/interproscan-5.62-94.0-64-bit.tar.gz</span><br><span class="line"><span class="comment"># checksum</span></span><br><span class="line"><span class="built_in">md5sum</span> -c interproscan-5.62-94.0-64-bit.tar.gz.md5</span><br><span class="line"><span class="comment"># untar gz</span></span><br><span class="line">tar xvzf interproscan-5.62-94.0-64-bit.tar.gz</span><br></pre></td></tr></table></figure>
+<h2 id="更改数据库"><a href="#更改数据库" class="headerlink" title="更改数据库"></a>更改数据库</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># remove old DB 根据conda安装路径的数据库删除</span></span><br><span class="line"><span class="built_in">rm</span> -rf /home/yangzy/miniconda3/share/InterProScan/data/</span><br><span class="line"><span class="comment"># copy past the new db 把</span></span><br><span class="line">cp-r /home/yangzy/miniconda3/envs/interproscan/interproscan-5.62-94.0/data /home/yangzy/miniconda3/share/InterProScan/</span><br><span class="line"><span class="comment">#将wget到的数据库复制过去</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./interproscan.sh -i test_proteins.fasta -f tsv</span><br></pre></td></tr></table></figure>
+<p>如果没有报错，则表示InterProScan能正常运行了<br>一般常用的参数有这些：<br>    -appl,–applications 用于指定使用Interpro中哪些数据库，默认全部数据库<br>    -b,–output-file-base 用于指定输出文件的路径or文件夹，默认是输入文件的路径<br>    -f,–formats 用于指定输出文件的后缀，蛋白序列默认输出TSV, XML and GFF3<br>    -i,–input 输入文件，一般要为fasta格式，不要带有其他特殊符号</p>
+<h1 id="TBtools"><a href="#TBtools" class="headerlink" title="TBtools"></a>TBtools</h1><p>使用TBtools中的Batch Protein Annotation in InterPro插件<br>参考：<a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/4tIlpUekwHRlPe4yySFnFA">https://mp.weixin.qq.com/s/4tIlpUekwHRlPe4yySFnFA</a></p>
+<p>上传1w条序列文件后，在分析到两千多条时显示超时错误：</p>
+<p>咨询插件创作者得到反馈：<br>不建议一次1w 太多了 对interprot网站造成一定负担 可以少量多次 比如1000条分10次 另外一次量过多也容易产生ip被封的风险</p>
+
     </div>
 
     
@@ -211,13 +223,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/06/26/hello-world/" rel="prev" title="Hello World">
-      <i class="fa fa-chevron-left"></i> Hello World
+    <a href="/2024/06/26/chenge-first-blog/" rel="prev" title="'chenge-first-blog'">
+      <i class="fa fa-chevron-left"></i> 'chenge-first-blog'
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/06/28/InterProScan/" rel="next" title="InterProScan">
-      InterProScan <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -276,6 +285,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#conda%E5%AE%89%E8%A3%85"><span class="nav-number">1.</span> <span class="nav-text">conda安装</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">安装：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E3%80%81%E6%A3%80%E6%9F%A5md5%E6%96%87%E4%BB%B6%E5%B9%B6%E8%A7%A3%E5%8E%8B%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.2.</span> <span class="nav-text">下载、检查md5文件并解压数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E6%95%B0%E6%8D%AE%E5%BA%93"><span class="nav-number">1.3.</span> <span class="nav-text">更改数据库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95"><span class="nav-number">1.4.</span> <span class="nav-text">测试</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TBtools"><span class="nav-number">2.</span> <span class="nav-text">TBtools</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
