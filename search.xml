@@ -43,22 +43,7 @@
   <entry>
     <title>Python入门基础课</title>
     <url>/2024/07/02/Python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AF%BE/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/D0C43D04435648A4A5A9B36556716345/version/421?method=get-resource&shareToken=76A1AE2F0EB444EB93D783F84996259D&entryId=444757277" alt="image"></th>
-<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/E7DFF433075443BFA56647303AA1711B/version/1006?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></th>
-<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/2615831E2F6B4BA8B50710ADAF47BBC9/version/1074?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>问答社区网站（电脑使用）：<a href="http://www.omicsclass.com/">http://www.omicsclass.com/</a></td>
-<td>组学大讲堂问答小程序(手机使用)</td>
-<td>组学大讲堂公众号</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="Python基础语法学习"><a href="#Python基础语法学习" class="headerlink" title="Python基础语法学习"></a>Python基础语法学习</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
+    <content><![CDATA[<h1 id="Python基础语法学习"><a href="#Python基础语法学习" class="headerlink" title="Python基础语法学习"></a>Python基础语法学习</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
 <li><p>注释：</p>
 <p>  使用 #表示注释行,一般井号在行首，也可以在行的中间，那么#后面的为注释信息</p>
 <p>  带有 #号的行python解释器会忽略</p>
@@ -718,22 +703,7 @@
   <entry>
     <title>Python 高级编程</title>
     <url>/2024/07/02/Python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/</url>
-    <content><![CDATA[<table>
-<thead>
-<tr>
-<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/D0C43D04435648A4A5A9B36556716345/version/421?method=get-resource&shareToken=76A1AE2F0EB444EB93D783F84996259D&entryId=444757277" alt="image"></th>
-<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/E7DFF433075443BFA56647303AA1711B/version/1006?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></th>
-<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/2615831E2F6B4BA8B50710ADAF47BBC9/version/1074?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></th>
-</tr>
-</thead>
-<tbody><tr>
-<td>问答社区网站（电脑使用）：<a href="http://www.omicsclass.com/">http://www.omicsclass.com/</a></td>
-<td>组学大讲堂问答小程序(手机使用)</td>
-<td>组学大讲堂公众号</td>
-</tr>
-</tbody></table>
-<hr>
-<h1 id="Python高级编程"><a href="#Python高级编程" class="headerlink" title="Python高级编程"></a>Python高级编程</h1><h2 id="1-函数"><a href="#1-函数" class="headerlink" title="1 函数"></a>1 函数</h2><h3 id="1-1-Python内置函数："><a href="#1-1-Python内置函数：" class="headerlink" title="1.1 Python内置函数："></a>1.1 Python内置函数：</h3><p>Python内置了很多有用的函数，我们可以直接调用。</p>
+    <content><![CDATA[<h1 id="Python高级编程"><a href="#Python高级编程" class="headerlink" title="Python高级编程"></a>Python高级编程</h1><h2 id="1-函数"><a href="#1-函数" class="headerlink" title="1 函数"></a>1 函数</h2><h3 id="1-1-Python内置函数："><a href="#1-1-Python内置函数：" class="headerlink" title="1.1 Python内置函数："></a>1.1 Python内置函数：</h3><p>Python内置了很多有用的函数，我们可以直接调用。</p>
 <p>内置函数总结：<a href="https://docs.python.org/zh-cn/3.7/library/functions.html">https://docs.Python.org/zh-cn/3.7/library/functions.html</a></p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">abs(-100)</span><br><span class="line">max(1, 2)</span><br><span class="line">int(&#x27;123&#x27;)</span><br><span class="line">float(&#x27;12.34&#x27;)</span><br><span class="line">sum([2,323,23])</span><br></pre></td></tr></table></figure>
 
