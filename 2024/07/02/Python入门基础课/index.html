@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="问答社区网站（电脑使用）：http:&#x2F;&#x2F;www.omicsclass.com&#x2F; 组学大讲堂问答小程序(手机使用) 组学大讲堂公众号    Python基础语法学习语法 注释：   使用 #表示注释行,一般井号在行首，也可以在行的中间，那么#后面的为注释信息   带有 #号的行python解释器会忽略  缩进   使用缩进表示层次关系，或者区分不同的代码块，不像perl语言用{}">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python入门基础课">
+<meta property="og:url" content="http://example.com/2024/07/02/Python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AF%BE/index.html">
+<meta property="og:site_name" content="Bio_Learning">
+<meta property="og:description" content="问答社区网站（电脑使用）：http:&#x2F;&#x2F;www.omicsclass.com&#x2F; 组学大讲堂问答小程序(手机使用) 组学大讲堂公众号    Python基础语法学习语法 注释：   使用 #表示注释行,一般井号在行首，也可以在行的中间，那么#后面的为注释信息   带有 #号的行python解释器会忽略  缩进   使用缩进表示层次关系，或者区分不同的代码块，不像perl语言用{}">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/D0C43D04435648A4A5A9B36556716345/version/421?method=get-resource&shareToken=76A1AE2F0EB444EB93D783F84996259D&entryId=444757277">
+<meta property="og:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/E7DFF433075443BFA56647303AA1711B/version/1006?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437">
+<meta property="og:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/2615831E2F6B4BA8B50710ADAF47BBC9/version/1074?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437">
+<meta property="article:published_time" content="2024-07-02T01:46:20.725Z">
+<meta property="article:modified_time" content="2024-07-02T02:14:10.898Z">
+<meta property="article:author" content="yangzy">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/D0C43D04435648A4A5A9B36556716345/version/421?method=get-resource&shareToken=76A1AE2F0EB444EB93D783F84996259D&entryId=444757277">
+
+<link rel="canonical" href="http://example.com/2024/07/02/Python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AF%BE/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python入门基础课 | Bio_Learning</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bio_Learning</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">yang51的学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/02/Python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AF%BE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yangzy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bio_Learning">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python入门基础课
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-02 09:46:20 / 修改时间：10:14:10" itemprop="dateCreated datePublished" datetime="2024-07-02T09:46:20+08:00">2024-07-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn-Python/" itemprop="url" rel="index"><span itemprop="name">Learn_Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <table>
+<thead>
+<tr>
+<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/D0C43D04435648A4A5A9B36556716345/version/421?method=get-resource&shareToken=76A1AE2F0EB444EB93D783F84996259D&entryId=444757277" alt="image"></th>
+<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/E7DFF433075443BFA56647303AA1711B/version/1006?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></th>
+<th><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/2615831E2F6B4BA8B50710ADAF47BBC9/version/1074?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>问答社区网站（电脑使用）：<a target="_blank" rel="noopener" href="http://www.omicsclass.com/">http://www.omicsclass.com/</a></td>
+<td>组学大讲堂问答小程序(手机使用)</td>
+<td>组学大讲堂公众号</td>
+</tr>
+</tbody></table>
+<hr>
+<h1 id="Python基础语法学习"><a href="#Python基础语法学习" class="headerlink" title="Python基础语法学习"></a>Python基础语法学习</h1><h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><ul>
+<li><p>注释：</p>
+<p>  使用 #表示注释行,一般井号在行首，也可以在行的中间，那么#后面的为注释信息</p>
+<p>  带有 #号的行python解释器会忽略</p>
+</li>
+<li><p>缩进</p>
+<p>  使用缩进表示层次关系，或者区分不同的代码块，不像perl语言用{} </p>
+<p>  约定使用4个空格缩进</p>
+</li>
+<li><p>续行</p>
+<p>  在行尾使用 \</p>
+<p>  如果使用各种括号，认为括号内是一个整体，括号内部跨行不用 \</p>
+</li>
+</ul>
+<p>Python示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line">Description: This script is used to onvert U in fasta sequence file to T</span><br><span class="line">Date: 2019</span><br><span class="line">Auther: omicsgene</span><br><span class="line">&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">from Bio.Seq import Seq</span><br><span class="line">from Bio import SeqIO</span><br><span class="line">from Bio.Alphabet import IUPAC</span><br><span class="line">from Bio.SeqRecord import SeqRecord</span><br><span class="line">import sys, os, argparse, os.path,re,math,time</span><br><span class="line">#参数设置</span><br><span class="line">parser = argparse.ArgumentParser(description=&#x27;This script is \</span><br><span class="line">    used to onvert U in fasta sequence file to T&#x27;)</span><br><span class="line">parser.add_argument(&#x27;-f&#x27;,&#x27;--fasta&#x27;,help=&#x27;Please fasta file&#x27;,required=True)</span><br><span class="line">parser.add_argument(&#x27;-o&#x27;,&#x27;--out_dir&#x27;,help=&#x27;Please input complete out_put directory path&#x27;,</span><br><span class="line">                    default = os.getcwd(),</span><br><span class="line">                    required=False)</span><br><span class="line"></span><br><span class="line">parser.add_argument(&#x27;-n&#x27;,&#x27;--name&#x27;,default =&#x27;demo_seq&#x27;,required=False,</span><br><span class="line">                    help=&#x27;Please specify the output, demo_seq&#x27;)</span><br><span class="line">################################################################################</span><br><span class="line">#读入参数，初始化路径</span><br><span class="line">args = parser.parse_args()</span><br><span class="line">dout=&#x27;&#x27;</span><br><span class="line">if os.path.exists(args.out_dir):</span><br><span class="line">    dout=os.path.abspath(args.out_dir)</span><br><span class="line">else:</span><br><span class="line">    os.mkdir(args.out_dir)</span><br><span class="line">    dout=os.path.abspath(args.out_dir)</span><br><span class="line"></span><br><span class="line">output_handle = open(dout+&#x27;/&#x27;+args.name+&#x27;.fa&#x27;, &quot;w&quot;)</span><br><span class="line">#循环处理序列将U转换成T,然后输出</span><br><span class="line">for rec in SeqIO.parse(args.fasta, &quot;fasta&quot;):</span><br><span class="line">    seq=rec.seq</span><br><span class="line">    seq=str(seq.upper())</span><br><span class="line">    seq=seq.replace(&quot;U&quot;, &quot;T&quot;)</span><br><span class="line">    seq_r = SeqRecord(Seq(seq,alphabet = IUPAC.IUPACAmbiguousDNA()), </span><br><span class="line">                      id=rec.id,</span><br><span class="line">                      description=rec.description)</span><br><span class="line">    SeqIO.write(seq_r, output_handle, &quot;fasta&quot;)</span><br><span class="line">output_handle.close()</span><br></pre></td></tr></table></figure>
+
+
+
+
+<h2 id="Python-标准数据类型和变量"><a href="#Python-标准数据类型和变量" class="headerlink" title="Python 标准数据类型和变量"></a>Python 标准数据类型和变量</h2><h4 id="数字："><a href="#数字：" class="headerlink" title="数字："></a>数字：</h4><ul>
+<li>整数 integer：  11，223，-23   </li>
+<li>布尔值 bool ：True  False</li>
+<li>浮点数 float： 1.2  、 1.46 、  1.44e10 、 -1.6e-66</li>
+<li>复数： 1+2j</li>
+</ul>
+<h4 id="字符串-string："><a href="#字符串-string：" class="headerlink" title="字符串 string："></a>字符串 string：</h4><ul>
+<li>使用 ‘  “ 单引号或者双引号引用的字符</li>
+<li>‘’’ 和 “”” 可以跨行，可以在其中任意的使用单双引号</li>
+</ul>
+<h4 id="空值"><a href="#空值" class="headerlink" title="空值"></a>空值</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">None</span><br></pre></td></tr></table></figure>
+
+
+<p>空值是Python里一个特殊的值，用None表示。None不能理解为0，因为0是有意义的，而None是一个特殊的空值。</p>
+<h4 id="变量："><a href="#变量：" class="headerlink" title="变量："></a>变量：</h4><p>变量：</p>
+<p>和初中代数的方程变量是一致的，只是在计算机程序中，变量不仅可以是数字，还可以是任意数据类型。</p>
+<p>变量名：</p>
+<ol>
+<li>必须是大小写英文字母、数字和 _ 的组合，且不能用数字开头。例如，可将变量命名为message_1，但不能将其命名为1_message。</li>
+<li>变量名不能包含空格，但可使用下划线来分隔其中的单词。例如，变量名greeting_message可行，但变量名greeting message会引发错误。</li>
+<li>不要将Python关键字和函数名用作变量名，即不要使用Python保留用于特殊用途的单词，如print。</li>
+<li>变量名应既简短又具有描述性，让人一看就知道里面代表的是什么数据。例如，name比n好，student_name比s_n好，name_length比length_of_persons_name好。</li>
+<li>慎用小写字母l和大写字母O，因给他们可能被人错看成数字1和0；</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = 123 # a是整数</span><br><span class="line">print(a)</span><br><span class="line">a = &#x27;ABC&#x27; # a变为字符串</span><br><span class="line">print(a)</span><br></pre></td></tr></table></figure>
+
+<h4 id="变量的理解"><a href="#变量的理解" class="headerlink" title="变量的理解"></a>变量的理解</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = &#x27;abc&#x27;</span><br><span class="line">b = a</span><br><span class="line">a = &#x27;xyz&#x27;</span><br><span class="line">print(b)</span><br></pre></td></tr></table></figure>
+
+<p>1： 执行a &#x3D; ‘abc’，解释器创建了字符串’abc’和变量a，并把a指向’abc’：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">a--&gt;abc</span><br></pre></td></tr></table></figure>
+<p>2：执行b &#x3D; a，解释器创建了变量b，并把b指向a指向的字符串’abc’：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">a--&gt;abc</span><br><span class="line">b--&gt;abc</span><br></pre></td></tr></table></figure>
+
+<p>3：执行a &#x3D; ‘xyz’，解释器创建了字符串’xyz’，并把a的指向改为’xyz’，但b并没有更改：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">graph LR</span><br><span class="line">a--&gt;xyz</span><br><span class="line">b--&gt;abc</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="Python-标准数据的操作"><a href="#Python-标准数据的操作" class="headerlink" title="Python 标准数据的操作"></a>Python 标准数据的操作</h2><h4 id="数字操作运算"><a href="#数字操作运算" class="headerlink" title="数字操作运算"></a>数字操作运算</h4><ul>
+<li>加减乘除  +  - *  &#x2F;</li>
+<li>求余运算 %    求幂运算  **</li>
+<li>自然除&#x2F; 结果是浮点数，整除&#x2F;&#x2F;。注意：在2.x中&#x2F;和&#x2F;&#x2F;都是整除。</li>
+</ul>
+<p>注意：字符串可以相加和相乘</p>
+<h4 id="字符串中特殊字符的转义："><a href="#字符串中特殊字符的转义：" class="headerlink" title="字符串中特殊字符的转义：\"></a>字符串中特殊字符的转义：\</h4><ul>
+<li>例如要在字符串中输入一个换行符： <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&quot;hello python\n&quot;</span><br></pre></td></tr></table></figure></li>
+<li>其他常见特殊意义的转义：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\\  \t  \r  \n  \&#x27;  \&quot;</span><br></pre></td></tr></table></figure></li>
+<li>字符前缀 r</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">print(r&#x27;my name is \n \&quot;lucy\&quot;&#x27;)</span><br></pre></td></tr></table></figure>
+
+
+
+<p>练习：<br>打印以下变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x = 122223</span><br><span class="line">y = 45116e-789</span><br><span class="line">a1 = &#x27;Hello, world&#x27;</span><br><span class="line">a2 = &#x27;Hello, \&#x27;Lily\&#x27;&#x27;</span><br><span class="line">a3 = r&#x27;Hello, &quot;Mike&quot;&#x27;</span><br><span class="line">a4 = r&#x27;&#x27;&#x27;Hello,</span><br><span class="line">omicsclass!&#x27;&#x27;&#x27;</span><br></pre></td></tr></table></figure>
+
+<h4 id="字符串格式化输出"><a href="#字符串格式化输出" class="headerlink" title="字符串格式化输出"></a>字符串格式化输出</h4><ul>
+<li>%运算符格式化字符串</li>
+<li>%s表示用字符串替换，%d表示用整数替换，有几个%?占位符，后面就跟几个变量或者值，顺序要对应好。如果只有一个%?，括号可以省略。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">print(&#x27;Age: %s. Gender: %s&#x27; % (25, True))</span><br><span class="line">print(&#x27;growth rate: %d %%&#x27; % 7)</span><br><span class="line">print(&#x27;%2d-%02d&#x27; % (3, 1))</span><br><span class="line">print(&#x27;%.2f&#x27; % 3.1415926)</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="关于字符串操作的一些方法"><a href="#关于字符串操作的一些方法" class="headerlink" title="关于字符串操作的一些方法"></a>关于字符串操作的一些方法</h4><p>&#x3D;&#x3D;重点掌握：split，strip，join&#x3D;&#x3D;</p>
+<p>方法的调用用 . 操作符</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>strip、rstrip、lstrip</td>
+<td>去除空白符。相当于对各个元素执行x.strip()</td>
+</tr>
+<tr>
+<td>split</td>
+<td>通过指定的分隔符将字符串拆分为一组子串</td>
+</tr>
+<tr>
+<td>join</td>
+<td>将字符串用作连接其他字符串序列的分隔符</td>
+</tr>
+<tr>
+<td>count</td>
+<td>返回子串在字符串中出现次数</td>
+</tr>
+<tr>
+<td>endswith、startswith</td>
+<td>如果字符串以某个后缀结尾（或开头），则返回True</td>
+</tr>
+<tr>
+<td>lower、upper</td>
+<td>分别将字母字符转换为小写或大写</td>
+</tr>
+<tr>
+<td>replace</td>
+<td>用另一个字符串替换指定子串</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>ljust、rjust</td>
+<td>用空格(或其他字符)填充字符串的空白侧以返回符合最低宽度的字符串</td>
+</tr>
+<tr>
+<td>index</td>
+<td>如果在字符串中找到子串，则返回子串第一个字符所在的位置。如果没有找到，则引发ValueError</td>
+</tr>
+<tr>
+<td>find</td>
+<td>如果在字符串中找到子串，则返回第一个发现的子串第一个字符所在的位置。如果没有找到，则返回-1</td>
+</tr>
+<tr>
+<td>rfind</td>
+<td>如果在字符串中找到子串，则返回最后一个发现的子串的第一个字符所在的位置。如果没有找到，则返回-1</td>
+</tr>
+</tbody></table>
+<p>示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">s = &#x27;A,T,C,G,A\n&#x27;</span><br><span class="line">print(s)</span><br><span class="line">print(s,end=&quot;&quot;)</span><br><span class="line">print(s.strip())</span><br><span class="line"></span><br><span class="line">s = &#x27;A,T,C,G,A&#x27;</span><br><span class="line">s.split(&#x27;,&#x27;)</span><br><span class="line"></span><br><span class="line">&quot;\t&quot;.join([&quot;A&quot;,&quot;T&quot;,&quot;T&quot;])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">s = &#x27;A,T,C,G,A&#x27;</span><br><span class="line">s.replace(&#x27;A&#x27;,&#x27;T&#x27;)</span><br><span class="line">s.count(&#x27;,&#x27;)</span><br><span class="line">s.index(&#x27;c&#x27;)</span><br><span class="line">s.find(&#x27;c&#x27;)</span><br><span class="line">s.endwith(&quot;A&quot;)</span><br><span class="line">s.lower()</span><br><span class="line"></span><br><span class="line">#函数</span><br><span class="line">len(s)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意:</strong> 调用函数或者方法，一定要跟()</p>
+<p>&#x3D;&#x3D;<strong>小知识</strong>&#x3D;&#x3D;<br>Python中函数和方法的区别：</p>
+<p>在Python中，<strong>函数</strong>(function) 和<strong>方法</strong>(method) 是有区别的：</p>
+<ul>
+<li><p>所处的位置不同：函数是直接写在文件中而不是class中，方法是只能写在class中。</p>
+</li>
+<li><p>调用的方式不同：函数可以直接调用，例如：len()   print()等等，方法是在类中，一般用. 来调用，如： 前面学习的：lst.index()</p>
+</li>
+</ul>
+<h2 id="python中的列表list和元组tuple"><a href="#python中的列表list和元组tuple" class="headerlink" title="python中的列表list和元组tuple"></a>python中的列表list和元组tuple</h2><h3 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h3><p><strong>list 列表</strong></p>
+<ul>
+<li>list是一种有序的集合，可以随时添加和删除其中的元素。</li>
+<li>元素的类型可以是任意对象(数字，字符串，逻辑值，列表，对象等等)</li>
+<li>使用[]表示列表</li>
+</ul>
+<p><strong>tuple 元组</strong></p>
+<ul>
+<li>tuple：另一种有序列表,tuple和list非常类似，但是tuple一旦初始化就不能修改。</li>
+<li>使用()表示元组</li>
+</ul>
+<p>list的创建与初始化：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mylst=[]</span><br><span class="line">mylst=[1,3,&quot;a&quot;,&quot;xy&quot;,[11,22]]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>tuple的创建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">classmates = (&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;)</span><br><span class="line">t = (&#x27;a&#x27;, &#x27;b&#x27;, [&#x27;A&#x27;, &#x27;B&#x27;])</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="列表list相关的操作-函数-方法"><a href="#列表list相关的操作-函数-方法" class="headerlink" title="列表list相关的操作&amp;函数&amp;方法"></a>列表list相关的操作&amp;函数&amp;方法</h3><h3 id="列表的查询："><a href="#列表的查询：" class="headerlink" title="列表的查询："></a>列表的查询：</h3><h5 id="支持索引用中括号："><a href="#支持索引用中括号：" class="headerlink" title="支持索引用中括号：[]"></a>支持索引用中括号：[]</h5><ul>
+<li>正索引：从左到右，从0开始</li>
+<li>负索引：从右往左，从-1开始</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">lst=[&quot;A&quot;,&quot;T&quot;,&quot;A&quot;,&quot;a&quot;,22,[333,444]]</span><br><span class="line"></span><br><span class="line">lst[1]</span><br><span class="line">lst[0]</span><br><span class="line">lst[-1]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="列表切片"><a href="#列表切片" class="headerlink" title="列表切片"></a>列表切片</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">lst=[&quot;A&quot;,&quot;T&quot;,&quot;A&quot;,&quot;a&quot;,22,[333,444]]</span><br><span class="line">lst[0:3]</span><br><span class="line">#表示，从索引0开始取，直到索引3为止，但不包括索引3。即索引0，1，2，正好是3个元素。</span><br><span class="line">#如果第一个索引是0，还可以省略：</span><br><span class="line">lst[:3]</span><br><span class="line"></span><br><span class="line">lst[-2:-1]</span><br><span class="line">lst[-2:]</span><br></pre></td></tr></table></figure>
+<h5 id="注意多维"><a href="#注意多维" class="headerlink" title="注意多维[][]"></a>注意多维[][]</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">lst=[&quot;A&quot;,&quot;T&quot;,&quot;A&quot;,&quot;a&quot;,22,[333,444]]</span><br><span class="line">lst[5][0]</span><br></pre></td></tr></table></figure>
+
+<h3 id="列表元素修改"><a href="#列表元素修改" class="headerlink" title="列表元素修改"></a>列表元素修改</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">lst=[&quot;A&quot;,&quot;T&quot;,&quot;A&quot;,&quot;a&quot;,22,[333,444]]</span><br><span class="line">lst[5][0]=333</span><br><span class="line"></span><br><span class="line">lst[0]=&quot;omicsclass&quot;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="列表相关方法"><a href="#列表相关方法" class="headerlink" title="列表相关方法:"></a>列表相关方法:</h3><p>重点掌握方法：&#x3D;&#x3D;append  extend  sort&#x3D;&#x3D; </p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>list.append(x)</td>
+<td>在列表末尾添加新的对象</td>
+</tr>
+<tr>
+<td>list.sort(key&#x3D;None, reverse&#x3D;False)</td>
+<td>对原列表进行排序</td>
+</tr>
+<tr>
+<td>list.extend(iterable)</td>
+<td>在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表）</td>
+</tr>
+<tr>
+<td>list.count(x)</td>
+<td>统计某个元素在列表中出现的次数</td>
+</tr>
+<tr>
+<td>list.index(x[, start[, end]])</td>
+<td>从列表中找出某个值第一个匹配项的索引位置</td>
+</tr>
+<tr>
+<td>list.insert(i, x)</td>
+<td>将对象插入列表</td>
+</tr>
+<tr>
+<td>list.pop([i])</td>
+<td>移除列表中的一个元素（默认最后一个元素），并且返回该元素的值</td>
+</tr>
+<tr>
+<td>list.remove(x)</td>
+<td>移除列表中某个值的第一个匹配项</td>
+</tr>
+<tr>
+<td>list.reverse()</td>
+<td>反向列表中元素</td>
+</tr>
+</tbody></table>
+<h3 id="示例代码"><a href="#示例代码" class="headerlink" title="示例代码"></a>示例代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">lst=[&quot;A&quot;,&quot;T&quot;,&quot;A&quot;,&quot;a&quot;,22,[333,444]]</span><br><span class="line">#列表结尾追加元素</span><br><span class="line">lst.append(&quot;omicsgene&quot;) </span><br><span class="line"></span><br><span class="line">#将可迭代的对象元素追加进来；</span><br><span class="line">lst.extend([&quot;omicsgene&quot;,&quot;omicsclass&quot;]) </span><br><span class="line"></span><br><span class="line">#在指定的索引处插入元素</span><br><span class="line">lst.insert(1,&quot;omicsclass&quot;) </span><br><span class="line"></span><br><span class="line">#从左到右查询第一个匹配的元素删除</span><br><span class="line">lst.remove(&quot;A&quot;)  </span><br><span class="line"></span><br><span class="line">#不指定索引，就从列表结尾删除元素，并返回该元素</span><br><span class="line">#也可以指定索引弹出；</span><br><span class="line">lst.pop()</span><br><span class="line">lst.pop(2)</span><br><span class="line"></span><br><span class="line">#反转list，会修改原列表</span><br><span class="line"></span><br><span class="line">lst.reverse()</span><br></pre></td></tr></table></figure>
+
+<h3 id="列表相关的函数"><a href="#列表相关的函数" class="headerlink" title="列表相关的函数"></a>列表相关的函数</h3><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>len(list)</td>
+<td>列表元素个数</td>
+</tr>
+<tr>
+<td>list(iterable)</td>
+<td>将可迭代对象转换为列表</td>
+</tr>
+<tr>
+<td>max(list)</td>
+<td>返回列表元素最大值</td>
+</tr>
+<tr>
+<td>min(list)</td>
+<td>返回列表元素最小值</td>
+</tr>
+</tbody></table>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a=[11,44,5,55,33,31,62,42]</span><br><span class="line">len(a)</span><br><span class="line">max(a)</span><br><span class="line">min(b)</span><br><span class="line"></span><br><span class="line">list([11,44,5,55,33,31,62,42])</span><br><span class="line">list(range(10))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="列表的排序"><a href="#列表的排序" class="headerlink" title="列表的排序"></a>列表的排序</h3><p>有全局函数sorted，和列表自带方法sort</p>
+<p><strong>list.sort(key&#x3D;None, reverse&#x3D;False)</strong></p>
+<ul>
+<li>key 指定带有一个参数的函数或者方法，用于从每个列表元素中提取比较键(例如key&#x3D;str.lower)。对应于列表中每一项的键会被计算一次，然后在整个排序过程中使用。默认值None表示直接对列表项排序而不计算一个单独的键值。</li>
+<li>reverse – 排序规则，reverse &#x3D; True 降序 ， reverse &#x3D; False 升序（默认）。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">## 1、最简单的排序</span><br><span class="line">l = [5,2,3,1,4 ]</span><br><span class="line">l.sort()</span><br><span class="line">print(l)   </span><br><span class="line"></span><br><span class="line">#反序</span><br><span class="line">l.sort(reverse=True)</span><br><span class="line">print(l)    </span><br><span class="line"></span><br><span class="line">##2、字符串排序</span><br><span class="line">StrList = [&#x27;Fast&#x27;, &#x27;Smooth&#x27;, &#x27;fast&#x27;, &#x27;isb&#x27;, &#x27;isa&#x27;, &#x27;smooth&#x27;]</span><br><span class="line">#一般字典序排列，但是大写在前，小写在后！！</span><br><span class="line">StrList.sort()</span><br><span class="line">print(StrList) </span><br><span class="line"></span><br><span class="line">##2.2忽略大小写，按abcd顺序</span><br><span class="line">StrList.sort(key=str.lower)</span><br><span class="line">print(StrList) </span><br><span class="line"></span><br><span class="line">##2.3按照字符串长度排序</span><br><span class="line">StrList.sort(key=len)</span><br><span class="line">print(StrList)</span><br><span class="line"></span><br><span class="line">#一起使用两个参数</span><br><span class="line">StrList.sort(key=len, reverse=True)</span><br><span class="line">print(StrList) </span><br></pre></td></tr></table></figure>
+
+
+<p><strong>sorted(iterable, key&#x3D;None, reverse&#x3D;False)</strong></p>
+<ul>
+<li>iterable – 可迭代对象。 例如：列表  range对象  字符串等</li>
+<li>key – 指定带有单个参数的函数，用于从 iterable 的每个元素中提取用于比较的键 (例如 key&#x3D;str.lower)。 默认值为 None (直接比较元素)。</li>
+<li>reverse – 排序规则，reverse &#x3D; True 降序 ， reverse &#x3D; False 升序（默认）。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">a = [5,7,6,3,4,1,2]</span><br><span class="line">b = sorted(a)       # 保留原列表</span><br><span class="line">print(b)</span><br><span class="line">b = sorted(a,reverse=True)  </span><br><span class="line">print(b)</span><br><span class="line">a = [&#x27;Fast&#x27;, &#x27;Smooth&#x27;, &#x27;fast&#x27;, &#x27;isb&#x27;, &#x27;isa&#x27;, &#x27;smooth&#x27;]</span><br><span class="line">b = sorted(a,key=str.lower,reverse=False)  </span><br><span class="line">print(b)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>sort 与 sorted 区别：</strong></p>
+<ul>
+<li><p>调用方式不同：<br>sort 是应用在 list 上的方法，sorted 可以对所有可迭代的对象进行排序操作。</p>
+</li>
+<li><p>返回对象不同：<br>list 的 sort 方法是在原来的列表上操作，无返回值（None），而函数 sorted 方法返回的是一个新的 list，而不是在原来的基础上进行的操作。</p>
+</li>
+</ul>
+<h2 id="python中的字典dict和集合set"><a href="#python中的字典dict和集合set" class="headerlink" title="python中的字典dict和集合set"></a>python中的字典dict和集合set</h2><ul>
+<li>dict  字典</li>
+</ul>
+<p>dict全称dictionary，使用键-值（key-value）存储，具有极快的查找速度。类似perl里面的hash。</p>
+<h3 id="字典的创建"><a href="#字典的创建" class="headerlink" title="字典的创建"></a>字典的创建</h3><p>字典的每个键值 key&#x3D;&gt;value对 用冒号 : 分割，每个键值对之间用逗号 , 分割，整个字典包括在花括号 {} 中 ,格式如下所示：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dict = &#123;&#x27;a&#x27;: 1, &#x27;b&#x27;: 2, &#x27;b&#x27;: &#x27;3&#x27;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="字典的特性："><a href="#字典的特性：" class="headerlink" title="字典的特性："></a>字典的特性：</h3><ol>
+<li>键必须不可变，所以可以用数字，字符串或元组充当，所以用列表就不行(列表是可变类型)：</li>
+<li>值可以没有限制地取任何python对象，既可以是标准的对象，也可以是用户定义的。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#x27;Name&#x27;: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7, &#x27;Name&#x27;: &#x27;Manni&#x27;&#125; </span><br><span class="line"></span><br><span class="line">#会报错</span><br><span class="line">d = &#123;[&#x27;Name&#x27;]: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="修改字典"><a href="#修改字典" class="headerlink" title="修改字典"></a>修改字典</h3><p>向字典中 添加新内容的方法是增加新的键&#x2F;值对，修改或删除已有键&#x2F;值对:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&#x27;Name&#x27;: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125;</span><br><span class="line">d[&#x27;Name&#x27;]                        #取值</span><br><span class="line">d[&#x27;Age&#x27;] = 18                    # 更新</span><br><span class="line">d[&#x27;School&#x27;] = &quot;omicsclass&quot;       # 添加</span><br><span class="line"> </span><br><span class="line">#取值打印</span><br><span class="line">print( &quot;d[&#x27;Age&#x27;]: &quot;, d[&#x27;Age&#x27;])</span><br><span class="line">print(&quot;d[&#x27;School&#x27;]: &quot;, d[&#x27;School&#x27;])</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"># 删除字典元素</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">d = &#123;&#x27;Name&#x27;: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125;</span><br><span class="line"> </span><br><span class="line">del d[&#x27;Name&#x27;]  # 删除键是&#x27;Name&#x27;的条目</span><br><span class="line">d.clear()      # 清空字典所有条目</span><br><span class="line">del d          # 删除字典</span><br><span class="line"> </span><br><span class="line">print(&quot;d[&#x27;Age&#x27;]: &quot;, d[&#x27;Age&#x27;])</span><br><span class="line">print(&quot;d[&#x27;School&#x27;]: &quot;, d[&#x27;School&#x27;])</span><br></pre></td></tr></table></figure>
+
+<h3 id="字典内置方法"><a href="#字典内置方法" class="headerlink" title="字典内置方法"></a>字典内置方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>dict.keys()</td>
+<td>以列表返回一个字典所有的键</td>
+</tr>
+<tr>
+<td>dict.values()</td>
+<td>以列表返回字典中的所有值</td>
+</tr>
+<tr>
+<td>dict.items()</td>
+<td>以列表返回可遍历的(键, 值) 元组数组</td>
+</tr>
+<tr>
+<td>dict.get(key, default&#x3D;None)</td>
+<td>返回指定键的值，如果值不在字典中返回default值</td>
+</tr>
+</tbody></table>
+<p>判断字典key是否存在</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br><span class="line">#使用格式：</span><br><span class="line">#key in dict</span><br><span class="line">#key not in dict</span><br><span class="line"></span><br><span class="line">d = &#123;&#x27;Name&#x27;: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125;</span><br><span class="line">&#x27;Name&#x27; in d</span><br><span class="line">&#x27;Name&#x27; not in d</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="集合"><a href="#集合" class="headerlink" title="集合"></a>集合</h3><ul>
+<li>set  集合</li>
+</ul>
+<p>set 集合是一个无序的不重复元素序列。是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
+<ul>
+<li>集合创建</li>
+</ul>
+<p>可以使用大括号 { } 或者 set() 函数创建集合。</p>
+<p>注意：创建一个空集合必须用 set() 而不是 { }，因为 { } 是用来创建一个空字典。</p>
+<h4 id="集合的创建与运算"><a href="#集合的创建与运算" class="headerlink" title="集合的创建与运算"></a>集合的创建与运算</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">genes = &#123;&#x27;gene1&#x27;, &#x27;gene1&#x27;, &#x27;gene2&#x27;, &#x27;gene3&#x27;, &#x27;gene4&#x27;, &#x27;gene5&#x27;&#125;</span><br><span class="line"></span><br><span class="line">genes = set([&#x27;gene1&#x27;, &#x27;gene1&#x27;, &#x27;gene2&#x27;, &#x27;gene3&#x27;, &#x27;gene4&#x27;, &#x27;gene5&#x27;])</span><br><span class="line"></span><br><span class="line">print(genes)   </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#集合运算与判断</span><br><span class="line">&#x27;gene1&#x27; in genes </span><br><span class="line"></span><br><span class="line">&#x27;gene11&#x27; in genes</span><br><span class="line"></span><br><span class="line">#字符有列表特性，所以可以直接set   </span><br><span class="line">a = set(&#x27;omicsgene&#x27;)</span><br><span class="line">b = set(&#x27;omicsclass&#x27;)</span><br><span class="line"></span><br><span class="line"># 集合a中包含而集合b中不包含的元素</span><br><span class="line">a - b                              </span><br><span class="line"># 集合a或b中包含的所有元素</span><br><span class="line">a | b                              </span><br><span class="line"># 集合a和b中都包含了的元素</span><br><span class="line">a &amp; b                              </span><br><span class="line"># 不同时包含于a和b的元素</span><br><span class="line">a ^ b                              </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h3 id="集合常用操作方法"><a href="#集合常用操作方法" class="headerlink" title="集合常用操作方法"></a>集合常用操作方法</h3><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>set.add(x)</td>
+<td>参数作为一个元素添加到原set集合</td>
+</tr>
+<tr>
+<td>set.update(s)</td>
+<td>可以添加多个元素，且参数可以是列表，元组，字典等</td>
+</tr>
+<tr>
+<td>set.remove(x)</td>
+<td>依据值删除，不存在会抛出异常KeyError</td>
+</tr>
+<tr>
+<td>set.discard(x)</td>
+<td>依据值删除，不存在不会报错</td>
+</tr>
+<tr>
+<td>set.clear()</td>
+<td>清空原set</td>
+</tr>
+</tbody></table>
+<p>代码示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">basket = &#123;&#x27;apple&#x27;, &#x27;orange&#x27;, &#x27;apple&#x27;, &#x27;pear&#x27;, &#x27;orange&#x27;, &#x27;banana&#x27;&#125;</span><br><span class="line">basket.add((&quot;aa&quot;,&quot;dd&quot;))</span><br><span class="line">basket.update(&quot;dcc&quot;)</span><br><span class="line">print(basket)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">basket.remove(&quot;apple&quot;)</span><br><span class="line">basket.remove(&quot;apple1&quot;)</span><br><span class="line">basket.discard(&quot;apple1&quot;)</span><br><span class="line"></span><br><span class="line">basket.clear()</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<h2 id="数据类型及类型转换"><a href="#数据类型及类型转换" class="headerlink" title="数据类型及类型转换"></a>数据类型及类型转换</h2><p>Python3 支持 的标准数据类型总结</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>类名</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Number（数字）</td>
+<td>int、float、bool、complex（复数）</td>
+</tr>
+<tr>
+<td>String（字符串）</td>
+<td>str</td>
+</tr>
+<tr>
+<td>List（列表）</td>
+<td>list</td>
+</tr>
+<tr>
+<td>Tuple（元组）</td>
+<td>tuple</td>
+</tr>
+<tr>
+<td>Set（集合）</td>
+<td>set</td>
+</tr>
+<tr>
+<td>Dictionary（字典）</td>
+<td>dict</td>
+</tr>
+</tbody></table>
+<p>Python3 的六个标准数据类型中：</p>
+<ul>
+<li>不可变数据（3 个）：Number（数字）、String（字符串）、Tuple（元组）；</li>
+<li>可变数据（3 个）：List（列表）、Dictionary（字典）、Set（集合）。</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#批量赋值</span><br><span class="line">a, b, c, d ,e= 20, 5.5, &quot;ATGC&quot;, True, 4+3j</span><br><span class="line"></span><br><span class="line">#获得数据类型</span><br><span class="line">print(type(a), type(b), type(c), type(d), type(e))</span><br><span class="line"></span><br><span class="line">#判断数据类型</span><br><span class="line">a=1</span><br><span class="line">isinstance(a, int)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<p>类型转换函数：</p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>int(x [,base])</td>
+<td>将x转换为一个整数</td>
+</tr>
+<tr>
+<td>float(x)</td>
+<td>将x转换到一个浮点数</td>
+</tr>
+<tr>
+<td>str(x)</td>
+<td>将对象 x 转换为字符串</td>
+</tr>
+<tr>
+<td>list(s)</td>
+<td>将序列 s 转换为一个列表</td>
+</tr>
+<tr>
+<td>set(s)</td>
+<td>转换为可变集合</td>
+</tr>
+<tr>
+<td>tuple(s)</td>
+<td>将序列 s 转换为一个元组</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>dict(d)</td>
+<td>创建一个字典。d 必须是一个 (key, value)元组序列。</td>
+</tr>
+<tr>
+<td>complex(real [,imag])</td>
+<td>创建一个复数</td>
+</tr>
+<tr>
+<td>repr(x)</td>
+<td>将对象 x 转换为表达式字符串</td>
+</tr>
+<tr>
+<td>eval(str)</td>
+<td>用来计算在字符串中的有效Python表达式,并返回一个对象</td>
+</tr>
+<tr>
+<td>frozenset(s)</td>
+<td>转换为不可变集合</td>
+</tr>
+<tr>
+<td>chr(x)</td>
+<td>将一个整数转换为一个字符</td>
+</tr>
+<tr>
+<td>ord(x)</td>
+<td>将一个字符转换为它的整数值</td>
+</tr>
+<tr>
+<td>hex(x)</td>
+<td>将一个整数转换为一个十六进制字符串</td>
+</tr>
+<tr>
+<td>oct(x)</td>
+<td>将一个整数转换为一个八进制字符串</td>
+</tr>
+</tbody></table>
+<h2 id="python中语句-if、for、while"><a href="#python中语句-if、for、while" class="headerlink" title="python中语句(if、for、while)"></a>python中语句(if、for、while)</h2><h3 id="if-语句-做判断"><a href="#if-语句-做判断" class="headerlink" title="if 语句 做判断"></a>if 语句 做判断</h3><p>计算机之所以能做很多自动化的任务，因为它可以自己做条件判断。</p>
+<h4 id="python中常见比较判断运算符"><a href="#python中常见比较判断运算符" class="headerlink" title="python中常见比较判断运算符"></a>python中常见比较判断运算符</h4><p>&#x3D;&#x3D;、  !&#x3D; 、 &lt;  、&gt; 、 &gt;&#x3D; 、 &lt;&#x3D;、in、not in</p>
+<p>注意：in、not in ： 判断值是否存在列表中或者字典的键中</p>
+<h5 id="示例代码："><a href="#示例代码：" class="headerlink" title="示例代码："></a>示例代码：</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">#简单的判断</span><br><span class="line">age = 20</span><br><span class="line">if age &gt;= 18:</span><br><span class="line">    print(&#x27;your age is&#x27;, age)</span><br><span class="line">    print(&#x27;adult&#x27;)</span><br><span class="line"></span><br><span class="line">l=[&#x27;Fast&#x27;, &#x27;Smooth&#x27;, &#x27;fast&#x27;, &#x27;isb&#x27;, &#x27;isa&#x27;, &#x27;smooth&#x27;]</span><br><span class="line">s = &#123;&#x27;gene1&#x27;, &#x27;gene1&#x27;, &#x27;gene2&#x27;, &#x27;gene3&#x27;, &#x27;gene4&#x27;, &#x27;gene5&#x27;&#125;</span><br><span class="line">d = &#123;&#x27;gene1&#x27;:122, &#x27;gene2&#x27;:2212, &#x27;gene3&#x27;:3121, &#x27;gene4&#x27;:2323, &#x27;gene5&#x27;:2543&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if &#x27;Fast&#x27; not in l:</span><br><span class="line">    print(True)</span><br><span class="line"></span><br><span class="line">#else 语句</span><br><span class="line">    </span><br><span class="line">age = 3</span><br><span class="line">if age &gt;= 18:</span><br><span class="line">    print(&#x27;your age is&#x27;, age)</span><br><span class="line">    print(&#x27;adult&#x27;)</span><br><span class="line">else:</span><br><span class="line">    print(&#x27;your age is&#x27;, age)</span><br><span class="line">    print(&#x27;teenager&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#elif语句    </span><br><span class="line">age = 3</span><br><span class="line">if age &gt;= 18:</span><br><span class="line">    print(&#x27;adult&#x27;)</span><br><span class="line">elif age &gt;= 6:</span><br><span class="line">    print(&#x27;teenager&#x27;)</span><br><span class="line">else:</span><br><span class="line">    print(&#x27;kid&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#判断条件依次执行，有一个为真就跳出</span><br><span class="line">age = 66</span><br><span class="line">if age &gt;= 18:</span><br><span class="line">    print(&#x27;adult&#x27;)</span><br><span class="line">elif age &gt;= 6:</span><br><span class="line">    print(&#x27;teenager&#x27;)</span><br><span class="line">elif age &gt;= 60:</span><br><span class="line">    print(&#x27;old people&#x27;)</span><br><span class="line">else:</span><br><span class="line">    print(&#x27;kid&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="逻辑运算符-增加判断条件"><a href="#逻辑运算符-增加判断条件" class="headerlink" title="逻辑运算符  增加判断条件"></a>逻辑运算符  增加判断条件</h4><ul>
+<li>与 、或 、非 ：  and 、 or 、 not</li>
+</ul>
+<ol>
+<li>and 如果第一个表达式为False，后面没有必要计算</li>
+<li>or 如果第一个表达式是True，后面就没有必要计算了</li>
+<li>条件很多不知道判断优先顺序可以添加小括号</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">#逻辑运算符</span><br><span class="line">age=11</span><br><span class="line">gender=&quot;male&quot;</span><br><span class="line"></span><br><span class="line">if age&gt;=18 and age&lt;=60 and gender==&quot;female&quot;:</span><br><span class="line">    print(&quot;adult woman&quot;)</span><br><span class="line"></span><br><span class="line">if age&lt;18 or age &gt;60 and gender==&quot;female&quot;:</span><br><span class="line">    print(&quot;kid or old woman&quot;)  </span><br><span class="line">    </span><br><span class="line">if age&gt;=18 and age&lt;=60 and not gender==&quot;female&quot;:</span><br><span class="line">    print(&quot;adult man&quot;)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="特殊数据真值表"><a href="#特殊数据真值表" class="headerlink" title="特殊数据真值表"></a>特殊数据真值表</h4><table>
+<thead>
+<tr>
+<th>对象&#x2F;变量</th>
+<th>值</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>“”</td>
+<td>假</td>
+</tr>
+<tr>
+<td>“string”</td>
+<td>真</td>
+</tr>
+<tr>
+<td>0</td>
+<td>假</td>
+</tr>
+<tr>
+<td>() 空元组</td>
+<td>假</td>
+</tr>
+<tr>
+<td>[] 空列表</td>
+<td>假</td>
+</tr>
+<tr>
+<td>{} 空字典</td>
+<td>假</td>
+</tr>
+<tr>
+<td>None</td>
+<td>假</td>
+</tr>
+</tbody></table>
+<h3 id="for-循环语句"><a href="#for-循环语句" class="headerlink" title="for 循环语句"></a>for 循环语句</h3><p>计算机之所以能批量的执行数据分析，就是因为有循环语句。</p>
+<p>for…in循环，in 后面跟可迭代对象</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br></pre></td><td class="code"><pre><span class="line">#列表遍历</span><br><span class="line">names = [&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br><span class="line">for name in names:</span><br><span class="line">    print(name)</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">sum = 0</span><br><span class="line">for x in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]:</span><br><span class="line">    sum = sum + x</span><br><span class="line">print(sum)    </span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#产生连续的数字函数：range(start, stop[, step])</span><br><span class="line"></span><br><span class="line">range(10)</span><br><span class="line">range(2,10)</span><br><span class="line">#也可以转换成list对象</span><br><span class="line">list(range(10))</span><br><span class="line">list(range(1, 11))</span><br><span class="line">list(range(0, 30, 5))</span><br><span class="line">list(range(0, 10, 3))</span><br><span class="line">list(range(0, -10, -1))</span><br><span class="line">list(range(0))</span><br><span class="line">list(range(1, 0))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sum = 0</span><br><span class="line">for x in range(101):</span><br><span class="line">    sum = sum + x</span><br><span class="line">print(sum)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sum = 0</span><br><span class="line">for x in range(3,101):</span><br><span class="line">    sum = sum + x</span><br><span class="line">print(sum)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">sum = 0</span><br><span class="line">for x in range(3,101,2):</span><br><span class="line">    sum = sum + x</span><br><span class="line">print(sum)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#enumerate函数  同时获取索引还有值</span><br><span class="line"></span><br><span class="line">#用法enumerate(sequence, [start=0])</span><br><span class="line"></span><br><span class="line">names = [&#x27;Michael&#x27;, &#x27;Bob&#x27;, &#x27;Tracy&#x27;]</span><br><span class="line">for index,value in enumerate(names):</span><br><span class="line">    print(index,value)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#字典遍历</span><br><span class="line">dict = &#123;&#x27;Name&#x27;: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125;</span><br><span class="line">for k,v in dict.items():</span><br><span class="line">    print(k,v)</span><br><span class="line"></span><br><span class="line">dict = &#123;&#x27;Name&#x27;: &#x27;Zara&#x27;, &#x27;Age&#x27;: 7, &#x27;Class&#x27;: &#x27;First&#x27;&#125;</span><br><span class="line">for k in dict.keys():</span><br><span class="line">    print(k,dict[k])</span><br></pre></td></tr></table></figure>
+
+<h3 id="while-循环语句"><a href="#while-循环语句" class="headerlink" title="while 循环语句"></a>while 循环语句</h3><p>while循环，只要条件满足，就不断循环，条件不满足时退出循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sum = 0</span><br><span class="line">n = 99</span><br><span class="line">while n &gt; 0:</span><br><span class="line">    sum = sum + n</span><br><span class="line">    n = n - 2</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+
+<h3 id="循环控制语句"><a href="#循环控制语句" class="headerlink" title="循环控制语句"></a>循环控制语句</h3><p>break  提前退出循环<br>continue  提前结束本轮循环</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">n = 1</span><br><span class="line">while n &lt;= 100:</span><br><span class="line">    if n &gt; 10: # 当n = 11时，条件满足，执行break语句</span><br><span class="line">        break # break语句会结束当前循环</span><br><span class="line">    print(n)</span><br><span class="line">    n = n + 1</span><br><span class="line">print(&#x27;END&#x27;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">n = 0</span><br><span class="line">while n &lt; 10:</span><br><span class="line">    n = n + 1</span><br><span class="line">    if n % 2 == 0: # 如果n是偶数，执行continue语句</span><br><span class="line">        continue # continue语句会直接继续下一轮循环，后续的print()语句不会执行</span><br><span class="line">    print(n)</span><br></pre></td></tr></table></figure>
+
+
+<p>&#x3D;&#x3D;练习题&#x3D;&#x3D;</p>
+<ol>
+<li>for 循环打印星号金字塔：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">    *</span><br><span class="line">   ***</span><br><span class="line">  *****</span><br><span class="line"> *******</span><br><span class="line">*********</span><br></pre></td></tr></table></figure>
+
+<p>答案：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">for i in range(1, 6):</span><br><span class="line">     for j in range(0, 6 - i):</span><br><span class="line">         print (&quot; &quot;,end=&quot;&quot;)</span><br><span class="line">     </span><br><span class="line">     print( &quot;*&quot;*(i),end=&quot;&quot;)</span><br><span class="line">     print( &quot;*&quot;*(i-1),end=&quot;&quot;)       </span><br><span class="line">     print(&quot;&quot;)</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li>利用for循环，打印乘法口诀：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">1*1=1	</span><br><span class="line">1*2=2	2*2=4	</span><br><span class="line">1*3=3	2*3=6	3*3=9	</span><br><span class="line">1*4=4	2*4=8	3*4=12	4*4=16	</span><br><span class="line">1*5=5	2*5=10	3*5=15	4*5=20	5*5=25	</span><br><span class="line">1*6=6	2*6=12	3*6=18	4*6=24	5*6=30	6*6=36	</span><br><span class="line">1*7=7	2*7=14	3*7=21	4*7=28	5*7=35	6*7=42	7*7=49	</span><br><span class="line">1*8=8	2*8=16	3*8=24	4*8=32	5*8=40	6*8=48	7*8=56	8*8=64	</span><br><span class="line">1*9=9	2*9=18	3*9=27	4*9=36	5*9=45	6*9=54	7*9=63	8*9=72	9*9=81	</span><br></pre></td></tr></table></figure>
+
+<p>答案：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for m in range(1, 10):</span><br><span class="line">    for n in range(1, m+1):</span><br><span class="line">        print(&quot;%d*%d=%d\t&quot;%(n,m,n*m), end=&quot;&quot;)</span><br><span class="line">    print(&quot;&quot;)</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="python-读写数据文件"><a href="#python-读写数据文件" class="headerlink" title="python 读写数据文件"></a>python 读写数据文件</h2><h3 id="python文件读写分为三步"><a href="#python文件读写分为三步" class="headerlink" title="python文件读写分为三步"></a>python文件读写分为三步</h3><ol>
+<li>打开文件获取文件对象</li>
+<li>操作文件</li>
+<li>关闭文件</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fr = open(&quot;test.txt&quot;,&quot;r&quot;)      #打开文件</span><br><span class="line">ff = fr.read()                 #读取文件所有内容  （不建议使用，如果文件内容巨大，内存会爆）</span><br><span class="line">print(ff) </span><br></pre></td></tr></table></figure>
+
+<h3 id="文件类型"><a href="#文件类型" class="headerlink" title="文件类型"></a>文件类型</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>r</td>
+<td>只读，默认模式   打开数据文件</td>
+</tr>
+<tr>
+<td>w</td>
+<td>只写，不可读，若文件不存在则创建，若存在，则删除内容，写入新内容</td>
+</tr>
+<tr>
+<td>a</td>
+<td>只追加，不可读，若文件不存在则创建，存在则追加新内容</td>
+</tr>
+</tbody></table>
+<h3 id="文件方法（不常用）"><a href="#文件方法（不常用）" class="headerlink" title="文件方法（不常用）"></a>文件方法（不常用）</h3><p> 前三个方法：在大文件时慎用，会把内容读到内存中，占用大内存</p>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>f.write()</td>
+<td>字符串写入一个打开的文件</td>
+</tr>
+<tr>
+<td>f.close()</td>
+<td>刷新缓冲区里任何还没写入的信息，并关闭该文件，这之后便不能再进行写入。</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>f.read()</td>
+<td>#读取所有内容</td>
+</tr>
+<tr>
+<td>f.readline()</td>
+<td>#读取一行</td>
+</tr>
+<tr>
+<td>f.readlines()</td>
+<td>#读取所有文件内容，返回一个list</td>
+</tr>
+<tr>
+<td>f.seek(0)</td>
+<td>#当前文件指针位置在0位</td>
+</tr>
+<tr>
+<td>f.writelines([“a”,”b”])</td>
+<td>#把列表写入文件</td>
+</tr>
+</tbody></table>
+<h4 id="文件的读入与写出（常用方法）："><a href="#文件的读入与写出（常用方法）：" class="headerlink" title="文件的读入与写出（常用方法）："></a>文件的读入与写出（常用方法）：</h4><p>文件的读入与写出主要用的是for循环：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fr=open(&quot;input.fa&quot;,&quot;r&quot;)   #输入文件，读取数据</span><br><span class="line">fw=open(&quot;output.fa&quot;,&quot;w&quot;)   #输出文件，写出结果</span><br><span class="line">for line in fr:              #循环一行一行的读取文件                                 </span><br><span class="line">    new_line = line.replace(&quot;A&quot;,&quot;T&quot;)                         </span><br><span class="line">    fw.write(new_line)</span><br><span class="line">fr.close()  #关闭文件</span><br><span class="line">fw.close()  #关闭文件</span><br></pre></td></tr></table></figure>
+
+
+<p>测试文件内容：<br>input.fa</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">AGTTAGCGGATAATGGCCATCAAAGCAACGCTTACCAACACTGCACCCCTTGTTTTGGAAATGCAACCAC</span><br><span class="line">AAAAGCATTGGACACTTGCTTACTTCAAATAAAACACATTTAAACAATTAGATGACGTGATGGACCAGAA</span><br><span class="line">TGGCGCATCGGGAAGTCATCCGAACAGGCTATCCCAAGGAAGAGGAGCCCATGCGCGCGAACGTGGCGCC</span><br><span class="line">ACAGTTTCCGCGGCGGCAAATCGGAGTAACATTATCGACGAAATGGCCAAAATATGCGAAGCCGATCGCC</span><br><span class="line">AGACTTTCGCCATCGCTCGACGGACTCGGGGTCACGAGCGGCTTGCGGTGGACAACAGCGACTTCGTCGC</span><br><span class="line">CGTGGAGGATCTTATTTTGTCCTACGCAGAGCCCACGCCCGAGGACCAGGTCGAGATGATCATGAGCGAC</span><br><span class="line">TTTTGCTCGTCTCCAACATACGCAGAGGATGAGGATGAGCCCAGCCATGAGTCGGAGCCGTGGTTTCGAT</span><br><span class="line">TTCGCAACAAAAGGATCAGAACCTACAGCCGGAAGAGGGATCCCAAAAGCCACAAGGCCGTTCAAAACGA</span><br><span class="line">GAAGCGTAGAGGTTCCTCAGGCCTCTCCGTGCAGAGGGATCTCAATACTTCGTTCACATCTATGGCTTGT</span><br><span class="line">GATTTCGATGCTTCATCACAGAAGATACACGAGGTCCTTTTGAACCTCAGTCAATACTTTTCCGCGACCG</span><br><span class="line">CGACAGCTTCCGGTCCGACTCCTGTCCCATCGCAAATAGATCTGCCAACCGAAGCAAGGCAGGATT</span><br></pre></td></tr></table></figure>
+
+<hr>
+<p>&#x3D;&#x3D;学习任务&#x3D;&#x3D;</p>
+<ul>
+<li>编写脚本要求：</li>
+<li><input checked="" disabled="" type="checkbox"> 读取gff文件，筛选出文件中1号染色体100000-500000之间的基因</li>
+<li><input checked="" disabled="" type="checkbox"> 输出基因的名字，染色体，起始位置，终止位置信息用tab分隔各列</li>
+</ul>
+<p>输入文件下载地址：</p>
+<p><a href="ftp://ftp.ensemblgenomes.org/pub/plants/release-44/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.44.chromosome.1.gff3.gz">ftp://ftp.ensemblgenomes.org/pub/plants/release-44/gff3/arabidopsis_thaliana/Arabidopsis_thaliana.TAIR10.44.chromosome.1.gff3.gz</a></p>
+<p>注意：几乎所有的生物数据文件都是文本文件，都可以用notepad++，editplus等文本编辑器打开，不要被文件后缀名迷惑，我们的编程语言python绝大多数情况下打开处理的也都是文本文件。</p>
+<hr>
+<p><strong>答案：</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">fr=open(&quot;D:\python_script\Arabidopsis_thaliana.TAIR10.44.chromosome.1.gff3\Arabidopsis_thaliana.TAIR10.44.chromosome.1.gff3&quot;,&quot;r&quot;)</span><br><span class="line">fw=open(&quot;D:\python_script\Arabidopsis_thaliana.TAIR10.44.chromosome.1.gff3\out.txt&quot;,&quot;w&quot;)</span><br><span class="line"></span><br><span class="line">for line in fr:</span><br><span class="line">    line=line.strip()</span><br><span class="line">    if not line[0]==&quot;#&quot;:</span><br><span class="line">        tmp=line.split(&quot;\t&quot;)</span><br><span class="line">        if tmp[0]==&quot;1&quot; and tmp[2]==&quot;gene&quot; and int(tmp[3])&gt;100000 and int(tmp[3])&lt;500000:</span><br><span class="line">            geneID=tmp[8].split(&quot;;&quot;)[0].split(&quot;=&quot;)[1]</span><br><span class="line">            #mystr=tmp[0]+&quot;\t&quot;+tmp[3]+&quot;\t&quot;+tmp[4]+&quot;\t&quot;+geneID+&quot;\n&quot;</span><br><span class="line">            mystr=&quot;\t&quot;.join([tmp[0],tmp[3],tmp[4],geneID])+&quot;\n&quot;</span><br><span class="line">            fw.write(mystr)</span><br><span class="line">            #fw.write(line+&quot;\n&quot;)</span><br><span class="line">    </span><br><span class="line">fr.close()</span><br><span class="line">fw.close()</span><br></pre></td></tr></table></figure>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/07/02/Python%E7%BB%98%E5%9B%BEmatplotlib/" rel="prev" title="Python 绘图matplotlib包科学绘图">
+      <i class="fa fa-chevron-left"></i> Python 绘图matplotlib包科学绘图
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/07/02/Python%E9%AB%98%E7%BA%A7%E7%BC%96%E7%A8%8B/" rel="next" title="Python 高级编程">
+      Python 高级编程 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E5%AD%A6%E4%B9%A0"><span class="nav-number">1.</span> <span class="nav-text">Python基础语法学习</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AF%AD%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%92%8C%E5%8F%98%E9%87%8F"><span class="nav-number">1.2.</span> <span class="nav-text">Python 标准数据类型和变量</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%EF%BC%9A"><span class="nav-number">1.2.0.1.</span> <span class="nav-text">数字：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2-string%EF%BC%9A"><span class="nav-number">1.2.0.2.</span> <span class="nav-text">字符串 string：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A9%BA%E5%80%BC"><span class="nav-number">1.2.0.3.</span> <span class="nav-text">空值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%EF%BC%9A"><span class="nav-number">1.2.0.4.</span> <span class="nav-text">变量：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%9A%84%E7%90%86%E8%A7%A3"><span class="nav-number">1.2.0.5.</span> <span class="nav-text">变量的理解</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python-%E6%A0%87%E5%87%86%E6%95%B0%E6%8D%AE%E7%9A%84%E6%93%8D%E4%BD%9C"><span class="nav-number">1.3.</span> <span class="nav-text">Python 标准数据的操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%AD%97%E6%93%8D%E4%BD%9C%E8%BF%90%E7%AE%97"><span class="nav-number">1.3.0.1.</span> <span class="nav-text">数字操作运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6%E7%9A%84%E8%BD%AC%E4%B9%89%EF%BC%9A"><span class="nav-number">1.3.0.2.</span> <span class="nav-text">字符串中特殊字符的转义：\</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%A0%BC%E5%BC%8F%E5%8C%96%E8%BE%93%E5%87%BA"><span class="nav-number">1.3.0.3.</span> <span class="nav-text">字符串格式化输出</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%93%8D%E4%BD%9C%E7%9A%84%E4%B8%80%E4%BA%9B%E6%96%B9%E6%B3%95"><span class="nav-number">1.3.0.4.</span> <span class="nav-text">关于字符串操作的一些方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E4%B8%AD%E7%9A%84%E5%88%97%E8%A1%A8list%E5%92%8C%E5%85%83%E7%BB%84tuple"><span class="nav-number">1.4.</span> <span class="nav-text">python中的列表list和元组tuple</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8B%E7%BB%8D"><span class="nav-number">1.4.1.</span> <span class="nav-text">介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8list%E7%9B%B8%E5%85%B3%E7%9A%84%E6%93%8D%E4%BD%9C-%E5%87%BD%E6%95%B0-%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.2.</span> <span class="nav-text">列表list相关的操作&amp;函数&amp;方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%9F%A5%E8%AF%A2%EF%BC%9A"><span class="nav-number">1.4.3.</span> <span class="nav-text">列表的查询：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%AF%E6%8C%81%E7%B4%A2%E5%BC%95%E7%94%A8%E4%B8%AD%E6%8B%AC%E5%8F%B7%EF%BC%9A"><span class="nav-number">1.4.3.0.1.</span> <span class="nav-text">支持索引用中括号：[]</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%88%87%E7%89%87"><span class="nav-number">1.4.3.0.2.</span> <span class="nav-text">列表切片</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E5%A4%9A%E7%BB%B4"><span class="nav-number">1.4.3.0.3.</span> <span class="nav-text">注意多维[][]</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E5%85%83%E7%B4%A0%E4%BF%AE%E6%94%B9"><span class="nav-number">1.4.4.</span> <span class="nav-text">列表元素修改</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9B%B8%E5%85%B3%E6%96%B9%E6%B3%95"><span class="nav-number">1.4.5.</span> <span class="nav-text">列表相关方法:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="nav-number">1.4.6.</span> <span class="nav-text">示例代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9B%B8%E5%85%B3%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-number">1.4.7.</span> <span class="nav-text">列表相关的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E6%8E%92%E5%BA%8F"><span class="nav-number">1.4.8.</span> <span class="nav-text">列表的排序</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E4%B8%AD%E7%9A%84%E5%AD%97%E5%85%B8dict%E5%92%8C%E9%9B%86%E5%90%88set"><span class="nav-number">1.5.</span> <span class="nav-text">python中的字典dict和集合set</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">1.5.1.</span> <span class="nav-text">字典的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E7%9A%84%E7%89%B9%E6%80%A7%EF%BC%9A"><span class="nav-number">1.5.2.</span> <span class="nav-text">字典的特性：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AD%97%E5%85%B8"><span class="nav-number">1.5.3.</span> <span class="nav-text">修改字典</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E5%86%85%E7%BD%AE%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.4.</span> <span class="nav-text">字典内置方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88"><span class="nav-number">1.5.5.</span> <span class="nav-text">集合</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E7%9A%84%E5%88%9B%E5%BB%BA%E4%B8%8E%E8%BF%90%E7%AE%97"><span class="nav-number">1.5.5.1.</span> <span class="nav-text">集合的创建与运算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%B8%B8%E7%94%A8%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">1.5.6.</span> <span class="nav-text">集合常用操作方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8F%8A%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">1.6.</span> <span class="nav-text">数据类型及类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python%E4%B8%AD%E8%AF%AD%E5%8F%A5-if%E3%80%81for%E3%80%81while"><span class="nav-number">1.7.</span> <span class="nav-text">python中语句(if、for、while)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#if-%E8%AF%AD%E5%8F%A5-%E5%81%9A%E5%88%A4%E6%96%AD"><span class="nav-number">1.7.1.</span> <span class="nav-text">if 语句 做判断</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#python%E4%B8%AD%E5%B8%B8%E8%A7%81%E6%AF%94%E8%BE%83%E5%88%A4%E6%96%AD%E8%BF%90%E7%AE%97%E7%AC%A6"><span class="nav-number">1.7.1.1.</span> <span class="nav-text">python中常见比较判断运算符</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81%EF%BC%9A"><span class="nav-number">1.7.1.1.1.</span> <span class="nav-text">示例代码：</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E8%BF%90%E7%AE%97%E7%AC%A6-%E5%A2%9E%E5%8A%A0%E5%88%A4%E6%96%AD%E6%9D%A1%E4%BB%B6"><span class="nav-number">1.7.1.2.</span> <span class="nav-text">逻辑运算符  增加判断条件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E6%95%B0%E6%8D%AE%E7%9C%9F%E5%80%BC%E8%A1%A8"><span class="nav-number">1.7.1.3.</span> <span class="nav-text">特殊数据真值表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#for-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.7.2.</span> <span class="nav-text">for 循环语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#while-%E5%BE%AA%E7%8E%AF%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.7.3.</span> <span class="nav-text">while 循环语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E6%8E%A7%E5%88%B6%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.7.4.</span> <span class="nav-text">循环控制语句</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python-%E8%AF%BB%E5%86%99%E6%95%B0%E6%8D%AE%E6%96%87%E4%BB%B6"><span class="nav-number">1.8.</span> <span class="nav-text">python 读写数据文件</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#python%E6%96%87%E4%BB%B6%E8%AF%BB%E5%86%99%E5%88%86%E4%B8%BA%E4%B8%89%E6%AD%A5"><span class="nav-number">1.8.1.</span> <span class="nav-text">python文件读写分为三步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%B1%BB%E5%9E%8B"><span class="nav-number">1.8.2.</span> <span class="nav-text">文件类型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%96%B9%E6%B3%95%EF%BC%88%E4%B8%8D%E5%B8%B8%E7%94%A8%EF%BC%89"><span class="nav-number">1.8.3.</span> <span class="nav-text">文件方法（不常用）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9A%84%E8%AF%BB%E5%85%A5%E4%B8%8E%E5%86%99%E5%87%BA%EF%BC%88%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95%EF%BC%89%EF%BC%9A"><span class="nav-number">1.8.3.1.</span> <span class="nav-text">文件的读入与写出（常用方法）：</span></a></li></ol></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yangzy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yangzy</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

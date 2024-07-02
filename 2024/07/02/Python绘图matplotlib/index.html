@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Python 绘图matplotlib包科学绘图Matplotlib: Python中最著名的绘图系统，pandas绘图也是由其封装而成。 官方网站：https:&#x2F;&#x2F;matplotlib.org&#x2F; 1 认识matplotlib绘图包绘图要素以及对应的类（对象） Figure  The whole figure. The figure keeps track of all the child Axe">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python 绘图matplotlib包科学绘图">
+<meta property="og:url" content="http://example.com/2024/07/02/Python%E7%BB%98%E5%9B%BEmatplotlib/index.html">
+<meta property="og:site_name" content="Bio_Learning">
+<meta property="og:description" content="Python 绘图matplotlib包科学绘图Matplotlib: Python中最著名的绘图系统，pandas绘图也是由其封装而成。 官方网站：https:&#x2F;&#x2F;matplotlib.org&#x2F; 1 认识matplotlib绘图包绘图要素以及对应的类（对象） Figure  The whole figure. The figure keeps track of all the child Axe">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/2D9C4B8F4FD742F6A8A1B8B423A18DF4/version/1811?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437">
+<meta property="og:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/42A13F509ADF4308BE2D8552668570E6/version/1798?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437">
+<meta property="og:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/7860471E3BDB4C8598952F1739C415B7/version/1783?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437">
+<meta property="article:published_time" content="2024-07-02T01:46:20.723Z">
+<meta property="article:modified_time" content="2024-07-02T02:14:14.359Z">
+<meta property="article:author" content="yangzy">
+<meta property="article:tag" content="Python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://note.youdao.com/yws/api/group/92990402/noteresource/2D9C4B8F4FD742F6A8A1B8B423A18DF4/version/1811?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437">
+
+<link rel="canonical" href="http://example.com/2024/07/02/Python%E7%BB%98%E5%9B%BEmatplotlib/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Python 绘图matplotlib包科学绘图 | Bio_Learning</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Bio_Learning</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">yang51的学习笔记</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/02/Python%E7%BB%98%E5%9B%BEmatplotlib/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="yangzy">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bio_Learning">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Python 绘图matplotlib包科学绘图
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-07-02 09:46:20 / 修改时间：10:14:14" itemprop="dateCreated datePublished" datetime="2024-07-02T09:46:20+08:00">2024-07-02</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Learn-Python/" itemprop="url" rel="index"><span itemprop="name">Learn_Python</span></a>
+                </span>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h1 id="Python-绘图matplotlib包科学绘图"><a href="#Python-绘图matplotlib包科学绘图" class="headerlink" title="Python 绘图matplotlib包科学绘图"></a>Python 绘图matplotlib包科学绘图</h1><p>Matplotlib:</p>
+<p>Python中最著名的绘图系统，pandas绘图也是由其封装而成。</p>
+<p>官方网站：<a target="_blank" rel="noopener" href="https://matplotlib.org/">https://matplotlib.org/</a></p>
+<h2 id="1-认识matplotlib绘图包绘图要素以及对应的类（对象）"><a href="#1-认识matplotlib绘图包绘图要素以及对应的类（对象）" class="headerlink" title="1 认识matplotlib绘图包绘图要素以及对应的类（对象）"></a>1 认识matplotlib绘图包绘图要素以及对应的类（对象）</h2><ul>
+<li>Figure</li>
+</ul>
+<p>The whole figure. The figure keeps track of all the child Axes, a smattering of ‘special’ artists (titles, figure legends, etc), and the canvas。</p>
+<p> The top level container Artist is the matplotlib.figure.Figure</p>
+<ul>
+<li>Axes</li>
+</ul>
+<p>This is what you think of as ‘a plot’, it is the region of the image with the data space. A given figure can contain many Axes, but a given Axes object can only be in one Figure. </p>
+<ul>
+<li>Axis</li>
+</ul>
+<p>These are the number-line-like objects.  They take care of setting the graph limits and generating the ticks (the marks on the axis) and ticklabels (strings labeling the ticks).</p>
+<ul>
+<li>Artist</li>
+</ul>
+<p>Basically everything you can see on the figure is an artist (even the Figure, Axes, and Axis objects). This includes Text objects, Line2D objects, collection objects, Patch objects … (you get the idea).</p>
+<h4 id="要素之间的关系："><a href="#要素之间的关系：" class="headerlink" title="要素之间的关系："></a>要素之间的关系：</h4><p><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/2D9C4B8F4FD742F6A8A1B8B423A18DF4/version/1811?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></p>
+<h4 id="多张图，要素之间的关系："><a href="#多张图，要素之间的关系：" class="headerlink" title="多张图，要素之间的关系："></a>多张图，要素之间的关系：</h4><p><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/42A13F509ADF4308BE2D8552668570E6/version/1798?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></p>
+<h3 id="Figure中更详细对象总结"><a href="#Figure中更详细对象总结" class="headerlink" title="Figure中更详细对象总结"></a>Figure中更详细对象总结</h3><p><img src="https://note.youdao.com/yws/api/group/92990402/noteresource/7860471E3BDB4C8598952F1739C415B7/version/1783?method=get-resource&shareToken=08DB9C16FB6D47AA8EBD104017423D2D&entryId=446741437" alt="image"></p>
+<h2 id="2-matplotlib包安装"><a href="#2-matplotlib包安装" class="headerlink" title="2 matplotlib包安装"></a>2 matplotlib包安装</h2><p>安装说明：<br><a target="_blank" rel="noopener" href="https://matplotlib.org/users/installing.html#installing-an-official-release">https://matplotlib.org/users/installing.html#installing-an-official-release</a></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">pip install matplotlib -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line"></span><br><span class="line">#jupyter 支持绘图显示，命令行需要安装运行以下代码：</span><br><span class="line"></span><br><span class="line">pip install ipympl  -i https://pypi.tuna.tsinghua.edu.cn/simple</span><br><span class="line">jupyter nbextension enable --py --sys-prefix ipympl</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="3-matplotlib绘图基础"><a href="#3-matplotlib绘图基础" class="headerlink" title="3 matplotlib绘图基础"></a>3 matplotlib绘图基础</h2><h3 id="matplotlib-pyplot-绘图入口模块"><a href="#matplotlib-pyplot-绘图入口模块" class="headerlink" title="matplotlib.pyplot 绘图入口模块"></a>matplotlib.pyplot 绘图入口模块</h3><p>&#x3D;&#x3D;matplotlib.pyplot 模块中有很多函数，我们直接调用就可以绘图：&#x3D;&#x3D;</p>
+<p>Everything in matplotlib is organized in a hierarchy. At the top of the hierarchy is the matplotlib “state-machine environment” which is provided by the <a target="_blank" rel="noopener" href="https://matplotlib.org/api/_as_gen/matplotlib.pyplot.html#module-matplotlib.pyplot">matplotlib.pyplot</a> module.</p>
+<p>我们使用matplotlib.pyplot 里面的函数来创建绘图，绘图主要有以下三步：</p>
+<ul>
+<li>第一步：创建Figure对象，相当于画布</li>
+<li>第二步：画布中添加Axes对象，画布中可以有很多图（Axes）</li>
+<li>第三步：利用Axes对象的方法绘图（plot，bar，pie等等）</li>
+</ul>
+<p>示例代码：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line">#########################################</span><br><span class="line">#载入包，模块等等</span><br><span class="line">#########################################</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line">import numpy as np</span><br><span class="line"></span><br><span class="line">###########################</span><br><span class="line">##第一步和第二步：  获得，Figure对象和Axes对象</span><br><span class="line">###########################</span><br><span class="line"></span><br><span class="line">#方法1：</span><br><span class="line">fig = plt.figure(figsize=(8, 6))</span><br><span class="line">ax1 = fig.add_axes([0.1, 0.1, 0.35, 0.8])</span><br><span class="line">ax2 = fig.add_axes([0.55, 0.1, 0.35, 0.8])</span><br><span class="line"></span><br><span class="line">#或者</span><br><span class="line">ax1 = fig.add_subplot(211)</span><br><span class="line">ax2 = fig.add_subplot(212)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#方法2：</span><br><span class="line">fig, ax = plt.subplots(figsize=(8, 6))</span><br><span class="line">#或者 </span><br><span class="line">fig, (ax1, ax2) = plt.subplots(nrows=1, ncols=2,figsize=(8, 6))</span><br><span class="line"></span><br><span class="line">##########################</span><br><span class="line">##第三步： 绘图</span><br><span class="line">#############################</span><br><span class="line"></span><br><span class="line">x = np.linspace(0, 2, 100)   </span><br><span class="line">fig, ax = plt.subplots(figsize=(8, 6))</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">ax.plot(x, x, label=&#x27;linear&#x27;)</span><br><span class="line">ax.plot(x, x**2, label=&#x27;quadratic&#x27;)</span><br><span class="line">ax.plot(x, x**3, label=&#x27;cubic&#x27;)</span><br><span class="line">ax.set_xlabel(&#x27;x label&#x27;)</span><br><span class="line">ax.set_ylabel(&#x27;y label&#x27;)</span><br><span class="line">ax.set_title(&quot;Simple Plot&quot;)</span><br><span class="line">ax.legend()</span><br><span class="line"></span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line">#保存图片</span><br><span class="line">#plt.savefig(&quot;D:\\python_script\\test.pdf&quot;)</span><br><span class="line">#plt.savefig(&quot;D:\\python_script\\test.png&quot;,dpi=300)</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="面向对象绘图和面向过程的绘图"><a href="#面向对象绘图和面向过程的绘图" class="headerlink" title="面向对象绘图和面向过程的绘图"></a>面向对象绘图和面向过程的绘图</h3><p>推荐面向对象的绘图，思路会更加清晰。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">import numpy as np</span><br><span class="line">import matplotlib.pyplot as plt</span><br><span class="line"></span><br><span class="line">x = np.linspace(0, 2, 100)</span><br><span class="line">plt.plot(x, x, label=&#x27;linear&#x27;)</span><br><span class="line">plt.plot(x, x**2, label=&#x27;quadratic&#x27;)</span><br><span class="line">plt.plot(x, x**3, label=&#x27;cubic&#x27;)</span><br><span class="line">plt.xlabel(&#x27;x label&#x27;)</span><br><span class="line">plt.ylabel(&#x27;y label&#x27;)</span><br><span class="line">plt.title(&quot;Simple Plot&quot;)</span><br><span class="line">plt.legend()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h2 id="3-学会自学绘图"><a href="#3-学会自学绘图" class="headerlink" title="3 学会自学绘图"></a>3 学会自学绘图</h2><h3 id="方法模板的API：每个类、方法、函数，参数的详细说明"><a href="#方法模板的API：每个类、方法、函数，参数的详细说明" class="headerlink" title="方法模板的API：每个类、方法、函数，参数的详细说明"></a>方法模板的API：每个类、方法、函数，参数的详细说明</h3><p><a target="_blank" rel="noopener" href="https://matplotlib.org/api/index.html#modules">https://matplotlib.org/api/index.html#modules</a></p>
+<h3 id="使用说明"><a href="#使用说明" class="headerlink" title="使用说明"></a>使用说明</h3><p><a target="_blank" rel="noopener" href="https://matplotlib.org/users/index.html">https://matplotlib.org/users/index.html</a></p>
+<h3 id="利用例子学习绘图"><a href="#利用例子学习绘图" class="headerlink" title="利用例子学习绘图"></a>利用例子学习绘图</h3><p><a target="_blank" rel="noopener" href="https://matplotlib.org/gallery/index.html">https://matplotlib.org/gallery/index.html</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Python/" rel="tag"># Python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/06/28/InterProScan/" rel="prev" title="InterProScan">
+      <i class="fa fa-chevron-left"></i> InterProScan
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/07/02/Python%E5%85%A5%E9%97%A8%E5%9F%BA%E7%A1%80%E8%AF%BE/" rel="next" title="Python入门基础课">
+      Python入门基础课 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python-%E7%BB%98%E5%9B%BEmatplotlib%E5%8C%85%E7%A7%91%E5%AD%A6%E7%BB%98%E5%9B%BE"><span class="nav-number">1.</span> <span class="nav-text">Python 绘图matplotlib包科学绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%AE%A4%E8%AF%86matplotlib%E7%BB%98%E5%9B%BE%E5%8C%85%E7%BB%98%E5%9B%BE%E8%A6%81%E7%B4%A0%E4%BB%A5%E5%8F%8A%E5%AF%B9%E5%BA%94%E7%9A%84%E7%B1%BB%EF%BC%88%E5%AF%B9%E8%B1%A1%EF%BC%89"><span class="nav-number">1.1.</span> <span class="nav-text">1 认识matplotlib绘图包绘图要素以及对应的类（对象）</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A6%81%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-number">1.1.0.1.</span> <span class="nav-text">要素之间的关系：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E5%BC%A0%E5%9B%BE%EF%BC%8C%E8%A6%81%E7%B4%A0%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%9A"><span class="nav-number">1.1.0.2.</span> <span class="nav-text">多张图，要素之间的关系：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Figure%E4%B8%AD%E6%9B%B4%E8%AF%A6%E7%BB%86%E5%AF%B9%E8%B1%A1%E6%80%BB%E7%BB%93"><span class="nav-number">1.1.1.</span> <span class="nav-text">Figure中更详细对象总结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-matplotlib%E5%8C%85%E5%AE%89%E8%A3%85"><span class="nav-number">1.2.</span> <span class="nav-text">2 matplotlib包安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-matplotlib%E7%BB%98%E5%9B%BE%E5%9F%BA%E7%A1%80"><span class="nav-number">1.3.</span> <span class="nav-text">3 matplotlib绘图基础</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#matplotlib-pyplot-%E7%BB%98%E5%9B%BE%E5%85%A5%E5%8F%A3%E6%A8%A1%E5%9D%97"><span class="nav-number">1.3.1.</span> <span class="nav-text">matplotlib.pyplot 绘图入口模块</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BB%98%E5%9B%BE%E5%92%8C%E9%9D%A2%E5%90%91%E8%BF%87%E7%A8%8B%E7%9A%84%E7%BB%98%E5%9B%BE"><span class="nav-number">1.3.2.</span> <span class="nav-text">面向对象绘图和面向过程的绘图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-%E5%AD%A6%E4%BC%9A%E8%87%AA%E5%AD%A6%E7%BB%98%E5%9B%BE"><span class="nav-number">1.4.</span> <span class="nav-text">3 学会自学绘图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E6%A8%A1%E6%9D%BF%E7%9A%84API%EF%BC%9A%E6%AF%8F%E4%B8%AA%E7%B1%BB%E3%80%81%E6%96%B9%E6%B3%95%E3%80%81%E5%87%BD%E6%95%B0%EF%BC%8C%E5%8F%82%E6%95%B0%E7%9A%84%E8%AF%A6%E7%BB%86%E8%AF%B4%E6%98%8E"><span class="nav-number">1.4.1.</span> <span class="nav-text">方法模板的API：每个类、方法、函数，参数的详细说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E"><span class="nav-number">1.4.2.</span> <span class="nav-text">使用说明</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E4%BE%8B%E5%AD%90%E5%AD%A6%E4%B9%A0%E7%BB%98%E5%9B%BE"><span class="nav-number">1.4.3.</span> <span class="nav-text">利用例子学习绘图</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">yangzy</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">6</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">yangzy</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+-->
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
